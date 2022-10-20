@@ -44,31 +44,49 @@ function tarjetas (datos){
     //Se agregan Eventos*********
         img.setAttribute("data-bs-toggle","modal");
         img.setAttribute("data-bs-target","#exampleModal");
-        let moreinfo = document.getElementById('lista');
-        let btn_cerrar = document.getElementById('cerrar');
 
         img.addEventListener('click', () =>{
-
+            let modal = document.createElement("div");
+            let modal_dialog = document.createElement("div");
+            let modal_content = document.createElement("div");
+            let modal_header = document.createElement("div");
+            let h1 = document.createElement("h1");
+            let boton = document.createElement("button");
+            let modal_body = document.createElement("div");
+            let ul = document.createElement("ul");
             let peso = document.createElement('li');
             let habilidades = document.createElement('li');
             let debilidades = document.createElement('li');
 
+            modal.classList.add("modal", "fade");
+            modal_dialog.classList.add("modal-dialog");
+            modal_content.classList.add("modal-content");
+            modal_header.classList.add("modal-header");
+            h1.classList.add("modal-title", "fs-5");
+            boton.classList.add("btn-close");
+            modal_body.classList.add("modal-body");
+            ul.classList.add();
+
+            modal.setAttribute("id", "exampleModal");
+            h1.setAttribute("id","exampleModalLabel");
+            boton.setAttribute("type","button");
+            boton.setAttribute("data-bs-dismiss","modal");
+            h1.innerHTML="Mas información del Pokemon " + datos[i].name;
             peso.innerHTML="Su peso es de: " + datos[i].weight;
             habilidades.innerHTML="Sus habilidades son: " + datos[i].abilities;
             debilidades.innerHTML="Su debilidades son: " + datos[i].weakness;
 
-            moreinfo.appendChild(peso);
-            moreinfo.appendChild(habilidades);
-            moreinfo.appendChild(debilidades);
-
-            if (btn_cerrar.setAttribute("click", true)) {
-                peso.remove();
-                habilidades.remove();
-                debilidades.remove();
-            
-                
-            }                       
-           
+            document.body.appendChild(modal);
+            modal.appendChild(modal_dialog);
+            modal_dialog.appendChild(modal_content);
+            modal_content.appendChild(modal_header);
+            modal_header.appendChild(h1);
+            modal_header.appendChild(boton);
+            modal_content.appendChild(ul);
+            ul.appendChild(peso);
+            ul.appendChild(habilidades);
+            ul.appendChild(debilidades);
+        
         })
     //Se agrega al HTML***
         document.body.appendChild(tar);
