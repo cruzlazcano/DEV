@@ -102,6 +102,9 @@ function tarjetas(datos) {
             peso.innerHTML="";
             habilidades.innerHTML="";
             debilidades.innerHTML="";
+            mod.dispose()
+
+
         })
     });
     //Se agrega al HTML***
