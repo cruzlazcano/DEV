@@ -1,25 +1,17 @@
 body {
 display: flex;
-justify-items:center;
-align-items:center;
-justify-content: space-around;
-flex-wrap: wrap;
-width: 100%;
+flex-direction: column;
 
 }
+.contenedor{
+  display: flex;
+  justify-items:center;
+  align-items:center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
 
-.overlay { 
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-  }
-  .overlay:target{
-    visibility: visible;
-    opacity: 1;
-  }
+}
+.navbar{
+  background-color: #e3f2fd;
+}
