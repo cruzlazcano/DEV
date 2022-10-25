@@ -29,6 +29,8 @@ function tarjetas(datos) {
                 <li class="list-group-item">Su peso es: ${datos[i].weight}</li>
                 <li class="list-group-item">Sus habilidades son: ${datos[i].abilities}</li>
                 <li class="list-group-item">Sus debilidades son: ${datos[i].weakness}</li>
+                <li class="list-group-item">El tipo de pokemon es: ${datos[i].type}</li>
+
                 </ul>
               </div>
               <div class="modal-footer">
@@ -81,9 +83,13 @@ function tarjetas(datos) {
 
   </div>
                     </div>`;
-
         }
         e.preventDefault();
-        document.getElementById("contenedor").innerHTML=poke;
+        if(!poke==""){
+          document.getElementById("contenedor").innerHTML=poke;
+
+        }else{
+          document.getElementById("contenedor").innerHTML = pokemones;
+        }
  })
 }

@@ -1,6 +1,7 @@
 body {
 display: flex;
 flex-direction: column;
+margin: 0px;
 
 }
 .contenedor{
@@ -10,8 +11,24 @@ flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 60px;
 
 }
 .navbar{
   background-color: #e3f2fd;
+  width: 100vw;
+  margin: 0px;
+
+
+}
+.container{
+  position: fixed;
+  z-index: 1;
+  margin: 0px;
+  width: 100vw;
+  padding: 0px;
+
+}
+.btn{
+  margin-right: 20px;
 }
