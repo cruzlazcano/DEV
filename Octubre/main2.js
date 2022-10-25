@@ -7,9 +7,9 @@ xmlhttp.onreadystatechange = function () {
 };
 xmlhttp.open("GET", "datos.json", true);
 xmlhttp.send();
-var pokemones="";
 
 function tarjetas(datos) {
+  var pokemones="";
   for (let i = 0; i < datos.length; i++) {
         pokemones += `<div class="card" style="width: 18rem;">
     <img data-bs-toggle="modal" data-bs-target="#exampleModal${i}" src="${datos[i].ThumbnailImage}" class="card-img-top" alt="...">
@@ -41,12 +41,12 @@ function tarjetas(datos) {
       </div>
         </div>`;
         }
-  document.getElementById("contenedor").innerHTML = pokemones;
+    document.getElementById("contenedor").innerHTML = pokemones;
 
   let btn_buscar = document.getElementById("btn_buscar");
   let buscar="";
 
-  btn_buscar.addEventListener('click', () => {
+  btn_buscar.addEventListener('click', (e) => {
     let busqueda = document.getElementById("busqueda").value;
     buscar = datos.filter(dat =>dat.name == busqueda);
     var poke ="";
@@ -81,7 +81,9 @@ function tarjetas(datos) {
 
   </div>
                     </div>`;
+
         }
+        e.preventDefault();
         document.getElementById("contenedor").innerHTML=poke;
  })
 }
